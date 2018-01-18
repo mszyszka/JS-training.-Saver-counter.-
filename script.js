@@ -1,33 +1,83 @@
 ///////////////////////decrease in the value of the car/////////////////////////////////
-
 var carCost = 10000;
-var carAge = 5;
-var timeOfUse =10;
+var carAge = 0;
+var timeOfUse = 10;
 
 var carValueAfterUsing;
 
-function valueDecrese(carCost,carAge,timeOfUse){
+
+function valueDecrese(carCost, carAge, timeOfUse){
     
-    if (timeOfUse == 0){
-        for(i=0; i>timeOfUse; i++)
+    for (var i = 0; i < timeOfUse; i ++){
+        
+        if(carAge==0)
         {
             if(i==0)
             {
-                carValueAfterUsing = carCost * 70%;
+                 carValueAfterUsing = carCost * 70%;
             }
-            else if(i==2)
+            else if (i==1)
             {
-                carValueAfterUsing = carCost * 90%;       
-            } 
+                  carValueAfterUsing = carValueAfterUsing * 90%;
+            }
+            else 
+            {
+                  carValueAfterUsing = carValueAfterUsing * 94%;
+            }
+        }
+            
+        else if(carAge==1)
+        {
+            if(i==0)
+            {
+                 carValueAfterUsing = carCost * 90%;
+            }
+            else if(i==1)
+            {
+                  carValueAfterUsing = carValueAfterUsing * 90%;
+            }
+            else 
+            {
+                carValueAfterUsing = carValueAfterUsing * 94%;
+            }
+
+        }
+        
+        else if(carAge==2)
+        {
+            if(i==0)
+            {
+                 carValueAfterUsing = carCost * 90%;
+            }
+            else 
+            {
+                  carValueAfterUsing = carValueAfterUsing * 94%;
+            }
+        
+        }
+        
+        else 
+        {
+            if(i==0)
+            {
+                carValueAfterUsing = carCost * 94%;
+            }
             else
             {
-                carValueAfterUsing = carCost * 94%;               
-            } 
+                carValueAfterUsing = carValueAfterUsing *94%;
+            }
         }
+            
+        
     }
-    return carValueAfterUsing;
-}
     
+    return carValueAfterUsing;
+
+}
+
+
+document.getElementById("valueDecreseBtn").addEventListener("click", valueDecrese, false);
+
 alert(valueDecrese);
 
 
