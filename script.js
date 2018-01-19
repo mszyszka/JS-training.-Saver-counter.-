@@ -1,9 +1,18 @@
+//Variable tha valueDecrese fuction need
 
 var carCost = 10000;
 var carAge = 0;
 var timeOfUse = 10;
 
 var carValueAfterUsing;
+
+//Variable that gasCosts function need
+
+var monthlyDistance =;
+var gasCost =;
+var fuelConsumption =;
+
+var monthlyGasCost =; 
 
 //I declare valueDecrese function with three arguments. This arguments are variables that will be conected with proper input files. First argument is var timeOfUse(with number of years that user want to using his car), second argument is var carAge(with age of user car when he bought it), third argument is var carCocst(with user car price when he bought it). Function return var carValueAfterUsing. 
 
@@ -58,9 +67,12 @@ function valueDecrese(timeOfUse, carAge, carCost) {
     return carValueAfterUsing;
 }
 //In here I declare var decrese that contain valueDecrese function with proper arguments in it. This line start valueDecrese function. 
-var decrese = valueDecrese(timeOfUse, carAge, carCost);
 
-    alert(decrese);
+//var decrese = valueDecrese(timeOfUse, carAge, carCost);
+
+//Now I want create function that will be counting monthly cost of gas.
+
+
 
 
 
