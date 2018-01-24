@@ -1,10 +1,17 @@
+//What I have now is car monthly value decrese and monthly gas costs
+
+
+var carWashCost;
+
+
 //Variable tha valueDecrese fuction need
 
-var carCost = 10000;
-var carAge = 0;
-var timeOfUse = 10;
+var carPrice = 10000;
+var carAge = 10;
+var timeOfUse = 1;
 
 var carValueAfterUsing;
+var monthlyCarValueDecrese;
 
 
 
@@ -13,14 +20,14 @@ var carValueAfterUsing;
 //1. I write loop that works from 0 to moment when i is equal var timeOfUse.
 //2. In this loop we have conditions that are depend on var CarAge. 
 //3. Next is code that calculate car value decrese. 
-function valueDecrese(timeOfUse, carAge, carCost) {
+function valueDecrese(timeOfUse, carAge, carPrice) {
     
     
     for (var i = 0; i < timeOfUse; i++) {
         if (carAge == 0) {
             if (i == 0) {
-//                In first calculation in var carValueAfterUsing I need save var carCost * 0.7 result
-                 carValueAfterUsing = carCost * "0.7" ;
+//                In first calculation in var carValueAfterUsing I need save var carPrice * 0.7 result
+                 carValueAfterUsing = carPrice * "0.7" ;
             }
             else if (i == 1) {
 //                Next, on the right site of =, i can use can use var carValueAfterUsing and multiply it by chosen number.
@@ -32,7 +39,7 @@ function valueDecrese(timeOfUse, carAge, carCost) {
         }
         else if (carAge == 1) {
             if (i == 0) {
-                carValueAfterUsing = carCost * "0.9" ;
+                carValueAfterUsing = carPrice * "0.9" ;
             }
             else if (i == 1) {
                 carValueAfterUsing = carValueAfterUsing * "0.9" ;
@@ -43,7 +50,7 @@ function valueDecrese(timeOfUse, carAge, carCost) {
         }
         else if (carAge == 2) {
             if (i == 0) {
-                carValueAfterUsing = carCost * "0.9" ;
+                carValueAfterUsing = carPrice * "0.9" ;
             }
             else {
                 carValueAfterUsing = carValueAfterUsing * "0.94" ;
@@ -51,19 +58,21 @@ function valueDecrese(timeOfUse, carAge, carCost) {
         }
         else {
             if (i == 0) {
-                carValueAfterUsing = carCost * "0.94" ;
+                carValueAfterUsing = carPrice * "0.94" ;
             }
             else {
                 carValueAfterUsing = carValueAfterUsing * "0.94" ;
             }
         }
     }
-    return carValueAfterUsing;
+    monthlyCarValueDecrese = (carPrice - carValueAfterUsing) / (timeOfUse * 12);
+    
+    return monthlyCarValueDecrese;
 
 }
 //In here I declare var decrese that contain valueDecrese function with proper arguments in it. This line start valueDecrese function. 
 
-//var startValueDecrese = valueDecrese(timeOfUse, carAge, carCost);
+//var startValueDecrese = valueDecrese(timeOfUse, carAge, carPrice);       FUNCTION START
 
 
 
@@ -73,12 +82,12 @@ function valueDecrese(timeOfUse, carAge, carCost) {
 
 //Variable that gasCosts function need
 
-var monthlyDistance =50;
-var gasPrice =4.8;
-var fuelConsumptionForHundred =7;
+var monthlyDistance;
+var gasPrice;
+var fuelConsumptionForHundred;
 
-var gasCostForHundred =0;
-var monthlyGasCost =0; 
+var gasCostForHundred;
+var monthlyGasCost; 
 
 
 function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
@@ -92,7 +101,43 @@ function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
     return monthlyGasCost;
 }
 
-var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);
+//var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);     FUNCTION START
+
+
+//Now I want to write a function that will be counting monthly insurance cost
+
+var insurencePrice;
+var monthlyInsurenceCost;
+
+function insuranceCost(){
+    monthlyInsurenceCost = insurencePrice / 12;
+    
+    return monthlyInsurenceCost;
+}
+
+//var starInsuranceCost = insuranceCost();                  FUNCTION START
+
+
+
+
+//Now I want to write function that will be counting monthly costs of gagets
+
+var gadgetsPrice;
+var monthlyGadgetsCost;
+
+function gadgetsCost(){
+    
+    monthlyGadgetsCost = gadgetsPrice / 12;
+    
+    alert(monthlyGadgetsCost);
+    return monthlyGadgetsCost;
+    
+}
+
+//var startGadgetsCost = gadgetsCost();                    FUNCTION START
+
+
+
 
 
 
