@@ -6,15 +6,9 @@ var timeOfUse = 10;
 
 var carValueAfterUsing;
 
-//Variable that gasCosts function need
 
-var monthlyDistance =;
-var gasCost =;
-var fuelConsumption =;
 
-var monthlyGasCost =; 
-
-//I declare valueDecrese function with three arguments. This arguments are variables that will be conected with proper input files. First argument is var timeOfUse(with number of years that user want to using his car), second argument is var carAge(with age of user car when he bought it), third argument is var carCocst(with user car price when he bought it). Function return var carValueAfterUsing. 
+//I declare valueDecrese function with three arguments. This arguments are variables that will be conected with proper input files. First argument is var timeOfUse(with number of years that user want to using his car), second argument is var carAge(with age of user car, when he bought it), third argument is var carCocst(with user car price, when he bought it). Function return var carValueAfterUsing. 
 
 //1. I write loop that works from 0 to moment when i is equal var timeOfUse.
 //2. In this loop we have conditions that are depend on var CarAge. 
@@ -65,12 +59,44 @@ function valueDecrese(timeOfUse, carAge, carCost) {
         }
     }
     return carValueAfterUsing;
+
 }
 //In here I declare var decrese that contain valueDecrese function with proper arguments in it. This line start valueDecrese function. 
 
-//var decrese = valueDecrese(timeOfUse, carAge, carCost);
+//var startValueDecrese = valueDecrese(timeOfUse, carAge, carCost);
+
+
+
 
 //Now I want create function that will be counting monthly cost of gas.
+
+
+//Variable that gasCosts function need
+
+var monthlyDistance =50;
+var gasPrice =4.8;
+var fuelConsumptionForHundred =7;
+
+var gasCostForHundred =0;
+var monthlyGasCost =0; 
+
+
+function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
+    
+    gasCostForHundred = gasPrice * fuelConsumptionForHundred; 
+    
+    
+    monthlyGasCost = (monthlyDistance *  gasCostForHundred) / 100;       
+
+
+    return monthlyGasCost;
+}
+
+var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);
+
+
+
+        
 
 
 
