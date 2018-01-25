@@ -1,15 +1,15 @@
 //What I have now is:
 
 //- car monthly value decrese
-//- monthly gas costs
-//- monthly insurance gasCost
+//- monthly gas cost
+//- monthly insurance cost
 //- monthly gadgets cost
 
 //What i need is: 
 
-//-function for summer tires
+//-function for summer tires - DONE
 //    I need whole distance that user will made using car and divide it by distance that you should drive on one tire set.
-//-function for winter tires
+//-function for winter tires - DONE
 //    Sam as above
 //-function for oil 
 //    Same as above
@@ -20,16 +20,41 @@
 
 
 var carWashCost;
-
-
-//Variable tha valueDecrese fuction need
-
 var carPrice = 10000;
 var carAge = 10;
-var timeOfUse = 1;
+var timeOfUse = 10;
 
+
+var timeOfUseMonths;
 var carValueAfterUsing;
 var monthlyCarValueDecrese;
+var numberOfsummerTiresSets;
+
+var summerTiresEndurance = 60000;
+var winterTiresEndurance = 45000;
+var tiresCost = 1000;
+
+var summerTiresCost;
+var winnterTiresCost;
+var monthlyDistance = 1000;
+var gasPrice;
+
+var fuelConsumptionForHundred;
+var gasCostForHundred;
+var monthlyGasCost; 
+var insurencePrice;
+
+var monthlyInsurenceCost;
+var gadgetsPrice;
+var monthlyGadgetsCost;
+
+var oilPrice = 100;
+var monthlyOilCost;
+var totalDistance = monthlyDistance * (timeOfUse*12);
+var numberOfOilChanges = totalDistance / 10000;
+
+
+
 
 
 
@@ -100,12 +125,6 @@ function valueDecrese(timeOfUse, carAge, carPrice) {
 
 //Variable that gasCosts function need
 
-var monthlyDistance;
-var gasPrice;
-var fuelConsumptionForHundred;
-
-var gasCostForHundred;
-var monthlyGasCost; 
 
 
 function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
@@ -124,8 +143,7 @@ function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
 
 //Now I want to write a function that will be counting monthly insurance cost
 
-var insurencePrice;
-var monthlyInsurenceCost;
+
 
 function insuranceCost(){
     monthlyInsurenceCost = insurencePrice / 12;
@@ -133,26 +151,81 @@ function insuranceCost(){
     return monthlyInsurenceCost;
 }
 
-//var starInsuranceCost = insuranceCost();                  FUNCTION START
+//var starInsuranceCost = insuranceCost();                               FUNCTION START
 
 
 
 
 //Now I want to write function that will be counting monthly costs of gagets
 
-var gadgetsPrice;
-var monthlyGadgetsCost;
+
 
 function gadgetsCost(){
     
     monthlyGadgetsCost = gadgetsPrice / 12;
     
-    alert(monthlyGadgetsCost);
     return monthlyGadgetsCost;
     
 }
 
-//var startGadgetsCost = gadgetsCost();                    FUNCTION START
+//var startGadgetsCost = gadgetsCost();                                 FUNCTION START
+
+
+
+//Now I want write functions that will be counting tires costs
+
+
+
+function summerTires(){
+    
+    numberOfsummerTiresSets = totalDistance / summerTiresEndurance;
+    
+    summerTiresCost = numberOfsummerTiresSets * tiresCost;
+    
+    summerTiresCost = Math.round(summerTiresCost);
+    
+    return summerTiresCost;
+    
+    
+}
+
+//var startSummerTires = summerTires();               FUNCTION START
+
+
+
+function winterTires(){
+    
+    numberOfwinterTiresSets = totalDistance / winterTiresEndurance;
+    
+    winterTiresCost = numberOfwinterTiresSets * tiresCost;
+    
+    winterTiresCost = Math.round(winterTiresCost);
+    
+    return winterTiresCost;
+}
+
+//var startWinterTiresCost = winterTires();                            FUNCTION START             
+
+
+//Now I want write functions that will be counting oil costs
+
+
+
+
+function oil(){
+    
+    monthlyOilCostil = (numberOfOilChanges * oilPrice) / (timeOfUse * 12);
+    
+    
+    alert(monthlyOilCostil);
+    
+    return monthlyOilCost;
+    
+    
+}
+
+var startOil = oil();
+
 
 
 
