@@ -1,4 +1,22 @@
-//What I have now is car monthly value decrese and monthly gas costs
+//What I have now is:
+
+//- car monthly value decrese
+//- monthly gas costs
+//- monthly insurance gasCost
+//- monthly gadgets cost
+
+//What i need is: 
+
+//-function for summer tires
+//    I need whole distance that user will made using car and divide it by distance that you should drive on one tire set.
+//-function for winter tires
+//    Sam as above
+//-function for oil 
+//    Same as above
+
+//-cost of repairing a car
+//-breaking system 
+//-fluids costs
 
 
 var carWashCost;
