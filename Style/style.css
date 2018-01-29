@@ -1,4 +1,32 @@
-body header h1 {
-  color: orange; }
+html {
+  font-size: 62.5%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #222222;
+  background: #ffa500; }
+
+.main-container {
+  margin: auto;
+  padding: 4rem 1rem;
+  text-align: center; }
+  .main-container h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem; }
+  .main-container h2, .main-container h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5rem; }
+  .main-container p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem; }
+
+input {
+  margin-bottom: 2rem; }
 
 /*# sourceMappingURL=style.css.map */

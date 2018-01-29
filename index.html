@@ -7,60 +7,60 @@
         <title>That much for car?!</title>
         <link href="Style/reset.css" type="text/css" rel="stylesheet">
         <link href="Style/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
     </head>
     <body>
         <div class="main-container">
             <header>
-                <h1>Sprawdź ile na prawdę miesięcznie kosztuje Cię utrzymanie samochodu!</h1>
+                <h1>Sprawdź, ile faktycznie miesięcznie kosztuje Cię utrzymanie samochodu!</h1>
+                <h2>Wypełnij pola formularza i naciśnij przycisk sprawdź.</h2>
             </header>
             
             <form>
                 <section class="section-0">
-                    <p>Ile kosztował Twój samochód?</p><br/>
-                    <input type="text" id="carPrice"><br/>
-                    <p>Ile lat miał Twój samochód gdy go kupiłeś?</p><br/>
-                    <input type="text" id="carAge"><br/>
+                    <p>Ile kosztował Twój samochód?</p>
+                    <input type="number" id="carPrice">
+                    <p>Ile lat miał Twój samochód gdy go kupiłeś?</p>
+                    <input type="number" id="carAge"><br/>
                     
                     
-                   <p> Ile lat zamierzasz użytkować Twój samochód?</p><br/><br/>
+                   <p>Ile lat zamierzasz użytkować Twój samochód?</p>
                     
-                    <input type="text" id="timeOfUse"><br/>
+                    <input type="number" id="timeOfUse">
                     
-                    <p>Jaki dystans pokonujesz miesięcznie?</p><br/>
-                    <input type="text" id="monthlyDistance"><br/>
-                    <p>Ile pali Twój samochód na sto kilometrów?</p><br/>
-                    <input type="text" id="fuelConsumptionForHundred"><br/>
+                    <p>Jaki dystans pokonujesz miesięcznie?</p>
+                    <input type="number" id="monthlyDistance">
+                    <p>Ile pali Twój samochód na sto kilometrów?</p>
+                    <input type="number" id="fuelConsumptionForHundred">
                     <p>Ile kosztuje paliwo które tankujesz?</p>
-                    <input type="text" id="gasPrice"><br/>
-                    <p>Ile płacisz za roczne ubezpieczenie?</p><br/>
-                    <input type="text" id="insurencePrice"><br/>
+                    <input type="number" id="gasPrice">
+                    <p>Ile płacisz za roczne ubezpieczenie?</p>
+                    <input type="number" id="insurencePrice">
                     
                     
-                    <p>Ile miesięcznie wydajesz na myjnie?</p><br/>
-                    <input type="text" id="carWashCost"><br/>
-                    <p>Ile rocznie wydajesz na zapachy, środki czystości, odmrażacze itp?</p><br/>
-                    <input type="text" id="gadgetsPrice"><br/>
+                    <p>Ile miesięcznie wydajesz na myjnie?</p>
+                    <input type="number" id="carWashCost">
+                    <p>Ile rocznie wydajesz na zapachy, środki czystości, odmrażacze itp?</p>
+                    <input type="number" id="gadgetsPrice">
                     <br/>
                     
-                    <p>Zakładamy że:</p><br/>
-                    <p>Olej wymieniasz co 10 000 km.</p><br/>
-                    <p>Zgadzam się.</p><br/>
+                    <h3>Zakładamy że:</h3>
+                    <p>Olej wymieniasz co 10 000 km.</p>
+                    <p>Zgadzam się.</p>
                     <input type="checkbox"><br/>
-                    <p>Opony letnie zmieniasz co 60 000 km</p><br/>
-                    <p>Zgadzam się.</p><br/>
-                    <input type="checkbox"><br/>
-                    <p>Opony zimowe zmieniasz co 45 000 km</p><br/>
-                    <p>Zgadzam się.</p><br/>
-                    <input type="checkbox"><br/>
-                    <p>Przegląd techniczny to wydatek 100zł rocznie</p><br/>
-                    <p>Zgadzam się.</p><br/>
-                    <input type="checkbox"><br/>
+                    <p>Opony letnie zmieniasz co 60 000 km</p>
+                    <p>Zgadzam się.</p>
+                    <input type="checkbox">
+                    <p>Opony zimowe zmieniasz co 45 000 km</p>
+                    <p>Zgadzam się.</p>
+                    <input type="checkbox">
+                    <p>Przegląd techniczny to wydatek 100zł rocznie</p>
+                    <p>Zgadzam się.</p>
+                    <input type="checkbox">
                     
-                    <br/>
-                    <br/>
+                    
                     <input type="button" value="Policz" id="startBtn">
-                    <br/>
-                    <br/>
+                    
                     <div id="result">
                     
                     </div>
