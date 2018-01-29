@@ -14,15 +14,13 @@
 //-function for oil - DONE
 //    Same as above
 
-//-cost of repairing a car
-//-breaking system 
-//-fluids costs
+//-cost of repairing a car - DONE 
 
 
-var carWashCost;
-var carPrice = 10000;
-var carAge = 10;
-var timeOfUse = 10;
+var carWashCost = document.getElementById("carWashCost").value;
+var carPrice = document.getElementById("carPrice").value;
+var carAge = document.getElementById("carAge").value;
+var timeOfUse = document.getElementById("timeOfUse").value;
 
 
 var timeOfUseMonths;
@@ -34,18 +32,16 @@ var summerTiresEndurance = 60000;
 var winterTiresEndurance = 45000;
 var tiresCost = 1000;
 
-var summerTiresCost;
-var winnterTiresCost;
-var monthlyDistance = 1000;
-var gasPrice;
+var monthlyDistance = document.getElementById("monthlyDistance").value;
+var gasPrice= document.getElementById("gasPrice").value;
 
-var fuelConsumptionForHundred;
+var fuelConsumptionForHundred= document.getElementById("fuelConsumptionForHundred").value;
 var gasCostForHundred;
 var monthlyGasCost; 
-var insurencePrice;
+var insurencePrice= document.getElementById("insurencePrice").value;
 
 var monthlyInsurenceCost;
-var gadgetsPrice;
+var gadgetsPrice= document.getElementById("gadgetsPrice").value;
 var monthlyGadgetsCost;
 var monthlyRepairCosts;
 
@@ -116,12 +112,14 @@ function valueDecrese(timeOfUse, carAge, carPrice) {
     }
     monthlyCarValueDecrese = (carPrice - carValueAfterUsing) / (timeOfUse * 12);
     
+    gasCost();
+    
     return monthlyCarValueDecrese;
 
 }
 //In here I declare var decrese that contain valueDecrese function with proper arguments in it. This line start valueDecrese function. 
 
-//var startValueDecrese = valueDecrese(timeOfUse, carAge, carPrice);       FUNCTION START
+//var startValueDecrese = valueDecrese(timeOfUse, carAge, carPrice);       
 
 
 
@@ -135,11 +133,12 @@ function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
     
     monthlyGasCost = (monthlyDistance *  gasCostForHundred) / 100;       
 
+    insuranceCost();
 
     return monthlyGasCost;
 }
 
-//var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);     FUNCTION START
+//var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);    
 
 
 
@@ -149,10 +148,12 @@ function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
 function insuranceCost(){
     monthlyInsurenceCost = insurencePrice / 12;
     
+    gadgetsCost();
+    
     return monthlyInsurenceCost;
 }
 
-//var starInsuranceCost = insuranceCost();                               FUNCTION START
+//var starInsuranceCost = insuranceCost();                              
 
 
 
@@ -163,11 +164,13 @@ function gadgetsCost(){
     
     monthlyGadgetsCost = gadgetsPrice / 12;
     
+    summerTires();
+    
     return monthlyGadgetsCost;
     
 }
 
-//var startGadgetsCost = gadgetsCost();                                 FUNCTION START
+//var startGadgetsCost = gadgetsCost();                                 
 
 
 
@@ -182,15 +185,17 @@ function summerTires(){
     
     summerTiresCost = Math.round(summerTiresCost);
     
+    winterTires();
+    
     return summerTiresCost;
     
     
 }
 
+//var startSummerTires = summerTires();             
 
 
 
-//var startSummerTires = summerTires();                                 FUNCTION START
 
 function winterTires(){
     
@@ -201,10 +206,12 @@ function winterTires(){
     winterTiresCost = Math.round(winterTiresCost);
     alert(winterTiresCost);
     
+    oil();
+    
     return winterTiresCost;
 }
 
-//var startWinterTiresCost = winterTires();                             FUNCTION START             
+//var startWinterTiresCost = winterTires();                                         
 
 
 
@@ -218,25 +225,19 @@ function oil(){
     
     alert(monthlyOilCostil);
     
+    repair();
+    
     return monthlyOilCost;
     
     
 }
 
-//var startOil = oil();                                                   FUNCTION START
-
-
-
-
-
+//var startOil = oil();                                                  
 
 
 
 
 //Now I want write functions that will be counting repair cost
-
-
-
 
 function repair(){
 
@@ -260,14 +261,28 @@ function repair(){
     {
         monthlyRepairCosts = (timeOfUse * 600) / (12 * timeOfUse);
     }
-    alert(monthlyRepairCosts);
+    
     return monthlyRepairCosts;
 }
 
     
-repair();
+//var startRepait = repair();                                                
 
-            
+
+
+
+//Whole monthly cost 
+
+function wholeCost(){
+    
+    var wholeMonthlyCost = monthlyCarValueDecrese + monthlyGasCost + monthlyInsurenceCost + monthlyGadgetsCost + summerTiresCost + winterTiresCost + monthlyOilCost +monthlyRepairCosts;
+    
+        document.getElementById("result").innerHTML = wholeMonthlyCost.value;
+
+}
+
+
+document.getElementById("startBtn").addEventListener("click", valueDecrese);
             
 
 
