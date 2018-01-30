@@ -21,9 +21,10 @@ body {
 
 .main-container {
     margin: auto;
-    padding: 4rem 2rem;
+    padding: 4rem 0;
     text-align: center;
-    
+    max-width: 600px;
+
     h1{
         font-size: 2rem;
         text-transform: uppercase;
@@ -38,7 +39,8 @@ body {
     }
     
     h3{
-        margin-bottom: 2rem;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
     }
     
     p{
@@ -46,30 +48,45 @@ body {
         margin-bottom: 2rem;
     }
     
+    p:last-of-type {
+        margin-bottom: 3rem;
+    }
     
+    
+    
+    
+}
+
+#gadgetsPrice {
+    margin-bottom: 0;
 }
 
 input[type=number] {
     width: 60%;
+    max-width: 25rem;
     background: $color2;
     border: 2px solid #DDD;
     border-radius: 5px;
     font-size: 1.4rem;
     padding: 8px 10px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     outline: none;
     
 }
 
+
+
 input[type=button]{
     width: 60%;
+    max-width: 25rem;
     background: $color3;
     border-radius: 5px;
     font-size: 1.4rem;
     padding: 12px 10px;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
     border: none;
     cursor: pointer;
     outline: none;
@@ -129,4 +146,22 @@ input:focus:-ms-input-placeholder
     color: #428C42;
 }
 
+
+@media(min-width: 500px){
+    .main-container{
+        padding: 4rem 0;
+    }
+}
+
+@media(min-width: 1000px){
+    .main-container{
+        padding: 6rem 0;
+    }
+}
+
+@media(min-width: 1300px){
+    .main-container{
+        padding: 8rem 0;
+    }
+}
 

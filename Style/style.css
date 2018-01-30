@@ -10,8 +10,9 @@ body {
 
 .main-container {
   margin: auto;
-  padding: 4rem 2rem;
-  text-align: center; }
+  padding: 4rem 0;
+  text-align: center;
+  max-width: 600px; }
   .main-container h1 {
     font-size: 2rem;
     text-transform: uppercase;
@@ -23,30 +24,39 @@ body {
     font-weight: 500;
     margin-bottom: 5rem; }
   .main-container h3 {
-    margin-bottom: 2rem; }
+    margin-bottom: 5rem;
+    margin-top: 5rem; }
   .main-container p {
     font-size: 1.6rem;
     margin-bottom: 2rem; }
+  .main-container p:last-of-type {
+    margin-bottom: 3rem; }
+
+#gadgetsPrice {
+  margin-bottom: 0; }
 
 input[type=number] {
   width: 60%;
+  max-width: 25rem;
   background: #efefef;
   border: 2px solid #DDD;
   border-radius: 5px;
   font-size: 1.4rem;
   padding: 8px 10px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   outline: none; }
 
 input[type=button] {
   width: 60%;
+  max-width: 25rem;
   background: #36B03C;
   border-radius: 5px;
   font-size: 1.4rem;
   padding: 12px 10px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
   border: none;
   cursor: pointer;
   outline: none; }
@@ -90,5 +100,15 @@ input:-ms-input-placeholder {
 
 input:focus:-ms-input-placeholder {
   color: #428C42; }
+
+@media (min-width: 500px) {
+  .main-container {
+    padding: 4rem 0; } }
+@media (min-width: 1000px) {
+  .main-container {
+    padding: 6rem 0; } }
+@media (min-width: 1300px) {
+  .main-container {
+    padding: 8rem 0; } }
 
 /*# sourceMappingURL=style.css.map */
