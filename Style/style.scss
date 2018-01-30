@@ -21,7 +21,7 @@ body {
 
 .main-container {
     margin: auto;
-    padding: 4rem 0;
+    padding: 5rem 2rem;
     text-align: center;
     max-width: 600px;
 
@@ -37,7 +37,9 @@ body {
         font-weight: 500;
         margin-bottom: 5rem;
     }
-    
+    h2{
+        margin-bottom: 0;
+    }
     h3{
         margin-bottom: 5rem;
         margin-top: 5rem;
@@ -55,6 +57,11 @@ body {
     
     
     
+}
+
+header .fa-car {
+    font-size: 5rem;
+    margin-bottom: 3rem;
 }
 
 #gadgetsPrice {
@@ -149,7 +156,7 @@ input:focus:-ms-input-placeholder
 
 @media(min-width: 500px){
     .main-container{
-        padding: 4rem 0;
+        padding: 5rem 4rem;
     }
 }
 
