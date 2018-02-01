@@ -19,34 +19,34 @@
 
 
 
-var carWashCost;
 
-var timeOfUseMonths;
 var carValueAfterUsing;
 var monthlyCarValueDecrese;
-var numberOfsummerTiresSets;
 
-var summerTiresEndurance = 60000;
+
 var winterTiresEndurance = 45000;
 var tiresCost = 1000;
 
-var monthlyDistance;
-var gasPrice;
 
-var fuelConsumptionForHundred;
 var gasCostForHundred;
 var monthlyGasCost; 
-var insurencePrice;
 
 var monthlyInsurenceCost;
-var gadgetsPrice;
 var monthlyGadgetsCost;
 var monthlyRepairCosts;
 
 var oilPrice = 100;
 var monthlyOilCost;
-var totalDistance;
+
 var numberOfOilChanges;
+
+var summerTiresEndurance = 60000;
+var totalDistance;
+var numberOfsummerTiresSets;
+var summerTiresCost;
+var winterTiresCost;
+var numberOfWinterTiresSets;
+
 
 
 
@@ -62,63 +62,62 @@ var numberOfOilChanges;
 
 
 
-function valueDecrese() {
+function valueDecrese(carPrice, carAge, timeOfUse) {
     
-    var carPrice = document.getElementById("input0").value;
-    var carAge = document.getElementById("input1").value;
-    var timeOfUse = document.getElementById("input2").value;
+//    var carPrice = document.getElementById("input0").value;
+//    var carAge = document.getElementById("input1").value;
+//    var timeOfUse = document.getElementById("input2").value;
     
     
-    alert(carPrice);
-//    for (var i = 0; i < timeOfUse; i++) {
-//        if (carAge == 0) {
-//            if (i == 0) {
-////                In first calculation in var carValueAfterUsing I need save var carPrice * 0.7 result
-//                 carValueAfterUsing = carPrice * "0.7" ;
-//            }
-//            else if (i == 1) {
-////                Next, on the right site of =, i can use can use var carValueAfterUsing and multiply it by chosen number.
-//                 carValueAfterUsing =  carValueAfterUsing * "0.9" ;
-//            }
-//            else {
-//                 carValueAfterUsing =  carValueAfterUsing * "0.94" ;
-//            }
-//        }
-//        else if (carAge == 1) {
-//            if (i == 0) {
-//                carValueAfterUsing = carPrice * "0.9" ;
-//            }
-//            else if (i == 1) {
-//                carValueAfterUsing = carValueAfterUsing * "0.9" ;
-//            }
-//            else {
-//                carValueAfterUsing = carValueAfterUsing * "0.94" ;
-//            }
-//        }
-//        else if (carAge == 2) {
-//            if (i == 0) {
-//                carValueAfterUsing = carPrice * "0.9" ;
-//            }
-//            else {
-//                carValueAfterUsing = carValueAfterUsing * "0.94" ;
-//            }
-//        }
-//        else {
-//            if (i == 0) {
-//                carValueAfterUsing = carPrice * "0.94" ;
-//            }
-//            else {
-//                carValueAfterUsing = carValueAfterUsing * "0.94" ;
-//            }
-//        }
-//    }
-//    monthlyCarValueDecrese = (carPrice - carValueAfterUsing) / (timeOfUse * 12);
-//    
-////    gasCost();
-//    
-//    alert(monthlyCarValueDecrese);
-//    
-//    return monthlyCarValueDecrese;
+    for (var i = 0; i < timeOfUse; i++) {
+        if (carAge == 0) {
+            if (i == 0) {
+//                In first calculation in var carValueAfterUsing I need save var carPrice * 0.7 result
+                 carValueAfterUsing = carPrice * "0.7" ;
+            }
+            else if (i == 1) {
+//                Next, on the right site of =, i can use can use var carValueAfterUsing and multiply it by chosen number.
+                 carValueAfterUsing =  carValueAfterUsing * "0.9" ;
+            }
+            else {
+                 carValueAfterUsing =  carValueAfterUsing * "0.94" ;
+            }
+        }
+        else if (carAge == 1) {
+            if (i == 0) {
+                carValueAfterUsing = carPrice * "0.9" ;
+            }
+            else if (i == 1) {
+                carValueAfterUsing = carValueAfterUsing * "0.9" ;
+            }
+            else {
+                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+            }
+        }
+        else if (carAge == 2) {
+            if (i == 0) {
+                carValueAfterUsing = carPrice * "0.9" ;
+            }
+            else {
+                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+            }
+        }
+        else {
+            if (i == 0) {
+                carValueAfterUsing = carPrice * "0.94" ;
+            }
+            else {
+                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+            }
+        }
+    }
+    monthlyCarValueDecrese = (carPrice - carValueAfterUsing) / (timeOfUse * 12);
+    
+//    gasCost();
+    
+    alert(monthlyCarValueDecrese);
+    
+    return monthlyCarValueDecrese;
     
     
     
@@ -134,166 +133,224 @@ function valueDecrese() {
 
 //
 ////Now I want create function that will be counting monthly cost of gas.
-//
-//function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
-//    
-//    gasCostForHundred = gasPrice * fuelConsumptionForHundred; 
-//    
-//    
-//    monthlyGasCost = (monthlyDistance *  gasCostForHundred) / 100;       
-//
-//    insuranceCost();
-//
-//    return monthlyGasCost;
-//}
-//
-////var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);    
-//
-//
-//
-//
-////Now I want to write a function that will be counting monthly insurance cost
-//
-//function insuranceCost(){
-//    monthlyInsurenceCost = insurencePrice / 12;
-//    
-//    gadgetsCost();
-//    
-//    return monthlyInsurenceCost;
-//}
-//
-////var starInsuranceCost = insuranceCost();                              
-//
-//
-//
-//
-////Now I want to write function that will be counting monthly costs of gagets
-//
-//function gadgetsCost(){
-//    
-//    monthlyGadgetsCost = gadgetsPrice / 12;
-//    
-//    summerTires();
-//    
-//    return monthlyGadgetsCost;
-//    
-//}
-//
-////var startGadgetsCost = gadgetsCost();                                 
-//
-//
-//
-//
-////Now I want write functions that will be counting tires costs
-//
-//function summerTires(){
-//    
-//    numberOfsummerTiresSets = totalDistance / summerTiresEndurance;
-//    
-//    summerTiresCost = (numberOfsummerTiresSets * tiresCost) / (timeOfUse *12);
-//    
-//    summerTiresCost = Math.round(summerTiresCost);
-//    
-//    winterTires();
-//    
-//    return summerTiresCost;
-//    
-//    
-//}
-//
-////var startSummerTires = summerTires();             
-//
-//
-//
-//
-//function winterTires(){
-//    
-//    numberOfwinterTiresSets = totalDistance / winterTiresEndurance;
-//    
-//    winterTiresCost = (numberOfwinterTiresSets * tiresCost) / (timeOfUse *12);
-//    
-//    winterTiresCost = Math.round(winterTiresCost);
-//    
-//    oil();
-//    
-//    return winterTiresCost;
-//}
-//
-////var startWinterTiresCost = winterTires();                                         
-//
-//
-//
-//
-////Now I want write functions that will be counting oil costs
-//
-//function oil(){
-//    
-//    monthlyOilCostil = (numberOfOilChanges * oilPrice) / (timeOfUse * 12);
-//    
-//    
-//    
-//    repair();
-//    
-//    return monthlyOilCost;
-//    
-//    
-//}
-//
-////var startOil = oil();                                                  
-//
-//
-//
-//
-////Now I want write functions that will be counting repair cost
-//
-//function repair(){
-//
-//    if(carAge == 0 && timeOfUse < 5)
-//    {
-//        monthlyRepairCosts = 0;
-//    } 
-//    else if(carAge == 0 && timeOfUse > 5)
-//    {
-//        monthlyRepairCosts == (timeOfUse * 100) / (12 * timeOfUse);
-//    }
-//    else if(carAge >= 5 && carAge < 10)
-//    {
-//        monthlyRepairCosts = (timeOfUse * 200) / (12 * timeOfUse);
-//    }
-//    else if(carAge >= 10 && carAge < 15)
-//    {
-//        monthlyRepairCosts = (timeOfUse * 400) / (12 * timeOfUse);
-//    }
-//    else
-//    {
-//        monthlyRepairCosts = (timeOfUse * 600) / (12 * timeOfUse);
-//    }
-//    
-//    wholeCost();
-//    
-//    return monthlyRepairCosts;
-//}
-//
-//    
-////var startRepait = repair();                                                
-//
-//
-//
-//
-////Whole monthly cost 
-//var wholeMonthlyCost;
-//
-//function wholeCost(){
-//    
-//      wholeMonthlyCost = monthlyCarValueDecrese + monthlyGasCost + monthlyInsurenceCost + monthlyGadgetsCost + summerTiresCost + winterTiresCost + monthlyOilCost +monthlyRepairCosts;
-//    
-//    return wholeMonthlyCost;
-//    
-//
-//}
+
+function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
+    
+    var monthlyDistance = document.getElementById("input3").value;
+    var gasPrice = document.getElementById("input5").value;
+    var fuelConsumptionForHundred = document.getElementById("input4").value;
+
+    gasCostForHundred = gasPrice * fuelConsumptionForHundred; 
+    
+    
+    monthlyGasCost = (monthlyDistance *  gasCostForHundred) / 100;       
+
+    insuranceCost();
+    
+//    alert(monthlyGasCost);
+    
+    return monthlyGasCost;
+}
+
+//var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);    
+
+
+
+
+//Now I want to write a function that will be counting monthly insurance cost
+
+function insuranceCost(){
+    
+    var insurencePrice = document.getElementById("input6").value;
+
+    monthlyInsurenceCost = insurencePrice / 12;
+    
+    gadgetsCost();
+    
+//    alert(monthlyInsurenceCost);
+    
+    return monthlyInsurenceCost;
+}
+
+//var starInsuranceCost = insuranceCost();                              
+
+
+
+
+//Now I want to write function that will be counting monthly costs of gagets
+
+function gadgetsCost(){
+    
+    var gadgetsPrice = document.getElementById("input8").value;
+    
+    monthlyGadgetsCost = gadgetsPrice / 12;
+    
+    summerTires();
+    
+    return monthlyGadgetsCost;
+    
+}
+
+//var startGadgetsCost = gadgetsCost();                                 
+
+
+
+
+//Now I want write functions that will be counting tires costs
+
+
+
+function summerTires(){
+    
+    var timeOfUse = document.getElementById("input2").value;
+    var monthlyDistance = document.getElementById("input3").value;
+    
+    totalDistance = monthlyDistance * (timeOfUse * 12);
+
+    numberOfsummerTiresSets = totalDistance / summerTiresEndurance;
+    
+    summerTiresCost = (numberOfsummerTiresSets * tiresCost) / (timeOfUse *12);
+    
+    summerTiresCost = Math.floor(summerTiresCost);
+    
+    winterTires();
+    
+    return summerTiresCost;
+    
+    
+}
+
+//var startSummerTires = summerTires();             
+
+
+
+
+function winterTires(){
+    
+    var timeOfUse = document.getElementById("input2").value;
+    var monthlyDistance = document.getElementById("input3").value;
+    
+    totalDistance = monthlyDistance * (timeOfUse * 12);
+
+    numberOfWinterTiresSets = totalDistance / winterTiresEndurance;
+    
+    winterTiresCost = (numberOfWinterTiresSets * tiresCost) / (timeOfUse *12);
+    
+    winterTiresCost = Math.floor(winterTiresCost);
+    
+    oil();
+    
+//    alert(winterTiresCost);
+    
+    return winterTiresCost;
+}
+
+//var startWinterTiresCost = winterTires();                                         
+
+
+
+
+//Now I want write functions that will be counting oil costs
+
+function oil(){
+    
+    var monthlyDistance = document.getElementById("input3").value;
+    var timeOfUse = document.getElementById("input2").value;
+    
+    totalDistance = monthlyDistance * (timeOfUse * 12);
+    
+    numberOfOilChanges = totalDistance / 10000;
+    
+    Math.floor(numberOfOilChanges);
+    
+    monthlyOilCostil = (numberOfOilChanges * oilPrice) / (timeOfUse * 12);
+    
+    
+    
+    repair();
+    
+    return monthlyOilCost;
+    
+    
+}
+
+//var startOil = oil();                                                  
+
+
+
+
+//Now I want write functions that will be counting repair cost
+
+function repair(){
+    
+    var carAge = document.getElementById("input1").value;
+    var timeOfUse = document.getElementById("input2").value;
+
+
+    if(carAge == 0 && timeOfUse < 5)
+    {
+        monthlyRepairCosts = 0;
+    } 
+    else if(carAge == 0 && timeOfUse > 5)
+    {
+        monthlyRepairCosts == (timeOfUse * 100) / (12 * timeOfUse);
+    }
+    else if(carAge >= 5 && carAge < 10)
+    {
+        monthlyRepairCosts = (timeOfUse * 200) / (12 * timeOfUse);
+    }
+    else if(carAge >= 10 && carAge < 15)
+    {
+        monthlyRepairCosts = (timeOfUse * 400) / (12 * timeOfUse);
+    }
+    else
+    {
+        monthlyRepairCosts = (timeOfUse * 600) / (12 * timeOfUse);
+    }
+    
+    carWash();
+    
+    return monthlyRepairCosts;
+}
 
     
-document.getElementById("startBtn").addEventListener("click", valueDecrese);
+//var startRepait = repair();                                                
+
+function carWash(){
+    
+    var carWashCost = document.getElementById("input7").value;
+    
+    wholeCost();
+    
+    return carWashCost;
+}
+
+
+//Whole monthly cost 
+
+function wholeCost(){
+    
+    var wholeMonthlyCost;
+    
+    var carPrice = document.getElementById("input0").value;
+    var carAge = document.getElementById("input1").value;
+    var timeOfUse = document.getElementById("input2").value;
+
+    
+    valueDecrese(carPrice, carAge, timeOfUse);
+    
+
+    
+    
+    
+//    return wholeMonthlyCost;
+    
+    
+
+}
+
+    
+document.getElementById("startBtn").addEventListener("click", wholeCost);
 
 //document.getElementById("result").innerHTML = 'Posiadanie samochodu kosztuje Cię miesięcznie:  ' + wholeMonthlyCost + '  zł';
 
