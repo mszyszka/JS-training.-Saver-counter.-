@@ -1,2 +1,2 @@
 # JS-training.-Saver-counter.-
-I'm writing a program that can count how much money you can save.
+I'm writing a program that can count how much money You spend monthly on car. 
