@@ -16,143 +16,100 @@
 
 //-cost of repairing a car - DONE 
 
-
-
-
-
-var carValueAfterUsing;
-var monthlyCarValueDecrese;
-
-
-var winterTiresEndurance = 45000;
-var tiresCost = 1000;
-
-
-var gasCostForHundred;
-var monthlyGasCost; 
-
-var monthlyInsurenceCost;
-var monthlyGadgetsCost;
-var monthlyRepairCosts;
-
-var oilPrice = 100;
-var monthlyOilCost;
-
-var numberOfOilChanges;
-
-var summerTiresEndurance = 60000;
-var totalDistance;
-var numberOfsummerTiresSets;
-var summerTiresCost;
-var winterTiresCost;
-var numberOfWinterTiresSets;
-
-
-
-
-
-
 //I declare valueDecrese function with three arguments. This arguments are variables that will be conected with proper input files. First argument is var timeOfUse(with number of years that user want to using his car), second argument is var carAge(with age of user car, when he bought it), third argument is var carCocst(with user car price, when he bought it). Function return var carValueAfterUsing. 
 
 //1. I write loop that works from 0 to moment when i is equal var timeOfUse.
 //2. In this loop we have conditions that are depend on var CarAge. 
 //3. Next is code that calculate car value decrese. 
 
-
-
-
-
-function valueDecrese(carPrice, carAge, timeOfUse) {
+function valueDecrese() {
     
-//    var carPrice = document.getElementById("input0").value;
-//    var carAge = document.getElementById("input1").value;
-//    var timeOfUse = document.getElementById("input2").value;
+    var carPrice = document.getElementById("input0").value;
+    var carAge = document.getElementById("input1").value;
+    var timeOfUse = document.getElementById("input2").value;
+    var carValueAfterUsing;
+    var monthlyCarValueDecrese;
     
     
-    for (var i = 0; i < timeOfUse; i++) {
-        if (carAge == 0) {
+    for (var i = 0; i < +timeOfUse; i++) {
+        if (+carAge == 0) {
             if (i == 0) {
 //                In first calculation in var carValueAfterUsing I need save var carPrice * 0.7 result
-                 carValueAfterUsing = carPrice * "0.7" ;
+                 carValueAfterUsing = carPrice * 0.7;
             }
             else if (i == 1) {
 //                Next, on the right site of =, i can use can use var carValueAfterUsing and multiply it by chosen number.
-                 carValueAfterUsing =  carValueAfterUsing * "0.9" ;
+                 carValueAfterUsing =  carValueAfterUsing * 0.9;
             }
             else {
-                 carValueAfterUsing =  carValueAfterUsing * "0.94" ;
+                 carValueAfterUsing =  carValueAfterUsing * 0.94;
             }
         }
         else if (carAge == 1) {
             if (i == 0) {
-                carValueAfterUsing = carPrice * "0.9" ;
+                carValueAfterUsing = carPrice * 0.9;
             }
             else if (i == 1) {
-                carValueAfterUsing = carValueAfterUsing * "0.9" ;
+                carValueAfterUsing = carValueAfterUsing * 0.9;
             }
             else {
-                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+                carValueAfterUsing = carValueAfterUsing * 0.94;
             }
         }
         else if (carAge == 2) {
             if (i == 0) {
-                carValueAfterUsing = carPrice * "0.9" ;
+                carValueAfterUsing = carPrice * 0.9;
             }
             else {
-                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+                carValueAfterUsing = carValueAfterUsing * 0.94;
             }
         }
         else {
             if (i == 0) {
-                carValueAfterUsing = carPrice * "0.94" ;
+                carValueAfterUsing = carPrice * 0.94;
             }
             else {
-                carValueAfterUsing = carValueAfterUsing * "0.94" ;
+                carValueAfterUsing = carValueAfterUsing * 0.94;
             }
         }
     }
     monthlyCarValueDecrese = (carPrice - carValueAfterUsing) / (timeOfUse * 12);
     
-//    gasCost();
+//    alert(monthlyCarValueDecrese);  I check it, what function return is a number
     
-    alert(monthlyCarValueDecrese);
-    
-    return monthlyCarValueDecrese;
-    
-    
+    return +monthlyCarValueDecrese;
     
 
 }
 
 
 //In here I declare var decrese that contain valueDecrese function with proper arguments in it. This line start valueDecrese function. 
-//
-//var startValueDecrese = valueDecrese(timeOfUse, carAge, carPrice);       
 
 
 
-//
+
+
 ////Now I want create function that will be counting monthly cost of gas.
 
-function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
+function gasCost() {
     
     var monthlyDistance = document.getElementById("input3").value;
     var gasPrice = document.getElementById("input5").value;
     var fuelConsumptionForHundred = document.getElementById("input4").value;
+    var gasCostForHundred;
+    var monthlyGasCost; 
 
     gasCostForHundred = gasPrice * fuelConsumptionForHundred; 
     
     
     monthlyGasCost = (monthlyDistance *  gasCostForHundred) / 100;       
 
-    insuranceCost();
     
-//    alert(monthlyGasCost);
+//    alert(monthlyGasCost); I check it, what function return is a number
     
-    return monthlyGasCost;
+    return +monthlyGasCost;
 }
 
-//var startGasCost = gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred);    
 
 
 
@@ -162,17 +119,15 @@ function gasCost(monthlyDistance, gasPrice, fuelConsumptionForHundred) {
 function insuranceCost(){
     
     var insurencePrice = document.getElementById("input6").value;
+    var monthlyInsurenceCost;
 
     monthlyInsurenceCost = insurencePrice / 12;
     
-    gadgetsCost();
+//    alert(monthlyInsurenceCost); I check it, what function return is a number
     
-//    alert(monthlyInsurenceCost);
-    
-    return monthlyInsurenceCost;
+    return +monthlyInsurenceCost;
 }
 
-//var starInsuranceCost = insuranceCost();                              
 
 
 
@@ -182,16 +137,17 @@ function insuranceCost(){
 function gadgetsCost(){
     
     var gadgetsPrice = document.getElementById("input8").value;
+    var monthlyGadgetsCost;
     
     monthlyGadgetsCost = gadgetsPrice / 12;
     
-    summerTires();
+//        alert(monthlyGadgetsCost);   I check it, what function return is a number
+
     
-    return monthlyGadgetsCost;
+    return +monthlyGadgetsCost;
     
 }
 
-//var startGadgetsCost = gadgetsCost();                                 
 
 
 
@@ -204,23 +160,24 @@ function summerTires(){
     
     var timeOfUse = document.getElementById("input2").value;
     var monthlyDistance = document.getElementById("input3").value;
-    
-    totalDistance = monthlyDistance * (timeOfUse * 12);
+    var numberOfsummerTiresSets;
+    var summerTiresCost;
+    var tiresCost = 1000;
+    var summerTiresEndurance = 60000;
+    var totalDistance = monthlyDistance * (timeOfUse * 12);
 
     numberOfsummerTiresSets = totalDistance / summerTiresEndurance;
     
     summerTiresCost = (numberOfsummerTiresSets * tiresCost) / (timeOfUse *12);
     
-    summerTiresCost = Math.floor(summerTiresCost);
     
-    winterTires();
+//    alert(summerTiresCost);   I check it, what function return is a number
+
     
-    return summerTiresCost;
-    
+    return +summerTiresCost;
     
 }
 
-//var startSummerTires = summerTires();             
 
 
 
@@ -229,23 +186,24 @@ function winterTires(){
     
     var timeOfUse = document.getElementById("input2").value;
     var monthlyDistance = document.getElementById("input3").value;
-    
-    totalDistance = monthlyDistance * (timeOfUse * 12);
+    var winterTiresCost;
+    var numberOfWinterTiresSets;
+    var winterTiresEndurance = 45000;
+    var tiresCost = 1000;
+
+    var totalDistance = monthlyDistance * (timeOfUse * 12);
 
     numberOfWinterTiresSets = totalDistance / winterTiresEndurance;
     
     winterTiresCost = (numberOfWinterTiresSets * tiresCost) / (timeOfUse *12);
     
-    winterTiresCost = Math.floor(winterTiresCost);
     
-    oil();
+//     alert(winterTiresCost);   I check it, what function return is a number
+
     
-//    alert(winterTiresCost);
-    
-    return winterTiresCost;
+    return +winterTiresCost;
 }
 
-//var startWinterTiresCost = winterTires();                                         
 
 
 
@@ -256,25 +214,28 @@ function oil(){
     
     var monthlyDistance = document.getElementById("input3").value;
     var timeOfUse = document.getElementById("input2").value;
+    var monthlyOilCost;
+    var numberOfOilChanges;
+    var oilPrice = 100;
     
-    totalDistance = monthlyDistance * (timeOfUse * 12);
+    var totalDistance = monthlyDistance * (timeOfUse * 12);
     
     numberOfOilChanges = totalDistance / 10000;
     
     Math.floor(numberOfOilChanges);
     
-    monthlyOilCostil = (numberOfOilChanges * oilPrice) / (timeOfUse * 12);
+    monthlyOilCost = (+numberOfOilChanges * +oilPrice) / (+timeOfUse * 12);
     
+//    alert(monthlyOilCost);   I check it, this is a place where a problem was. var monthlyOilCost was a string nan.
+//    I secured it with "+" to be sure that everything what is needed for monthlyOilCost ia a number.
+
     
+    return +monthlyOilCost;
     
-    repair();
-    
-    return monthlyOilCost;
     
     
 }
 
-//var startOil = oil();                                                  
 
 
 
@@ -285,6 +246,7 @@ function repair(){
     
     var carAge = document.getElementById("input1").value;
     var timeOfUse = document.getElementById("input2").value;
+    var monthlyRepairCosts;
 
 
     if(carAge == 0 && timeOfUse < 5)
@@ -308,43 +270,64 @@ function repair(){
         monthlyRepairCosts = (timeOfUse * 600) / (12 * timeOfUse);
     }
     
-    carWash();
+//    alert(monthlyRepairCosts); It's ok
     
     return monthlyRepairCosts;
 }
 
     
-//var startRepait = repair();                                                
 
 function carWash(){
     
     var carWashCost = document.getElementById("input7").value;
     
-    wholeCost();
+//    alert(carWashCost); It's ok
     
-    return carWashCost;
+    return +carWashCost;
 }
 
 
 //Whole monthly cost 
 
 function wholeCost(){
-    
+
+    var cost0;
+    var cost1;
+    var cost2;
+    var cost3;
+    var cost4;
+    var cost5;
+    var cost6;
+    var cost7;
+    var cost8;
     var wholeMonthlyCost;
-    
-    var carPrice = document.getElementById("input0").value;
-    var carAge = document.getElementById("input1").value;
-    var timeOfUse = document.getElementById("input2").value;
 
     
-    valueDecrese(carPrice, carAge, timeOfUse);
+    cost0 = valueDecrese();
     
+    cost1 = gasCost();
+    
+    cost2 = insuranceCost();
+    
+    cost3 = gadgetsCost();
+    
+    cost4 = summerTires();
+    
+    cost5 = winterTires();
+    
+    cost6 = oil();
+    
+    cost7 =  repair();
+    
+    cost8 = carWash();
+    
+    wholeMonthlyCost = +cost0 + +cost1 + +cost2 + +cost3 + +cost4 + +cost5+ +cost6 + +cost7 + cost8;
+    
+    wholeMonthlyCost = Math.floor(wholeMonthlyCost);
+    
+    document.getElementById("result").innerHTML = 'Posiadanie samochodu kosztuje Cię miesięcznie:</br>~ ' + wholeMonthlyCost + '  zł';
 
-    
-    
-    
-//    return wholeMonthlyCost;
-    
+    return +wholeMonthlyCost;
     
 
 }
@@ -352,7 +335,6 @@ function wholeCost(){
     
 document.getElementById("startBtn").addEventListener("click", wholeCost);
 
-//document.getElementById("result").innerHTML = 'Posiadanie samochodu kosztuje Cię miesięcznie:  ' + wholeMonthlyCost + '  zł';
 
             
 
